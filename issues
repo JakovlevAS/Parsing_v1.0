@@ -1,0 +1,6 @@
+1.Images are not being downloaded properly or are being truncated during the download process.
+2.The program is not able to download images from certain websites or image galleries.
+3.There is a high amount of latency or timeouts during the download process, making it difficult to download larger numbers of images.
+4.The program doesn't have a way to filter or sort downloaded images by criteria such as file type, size or aspect ratio.
+5.The program doesn't have a way to track which images have been downloaded or from which sources.
+6.The program does not have a way to resume interrupted downloads or handle connection errors gracefully.
