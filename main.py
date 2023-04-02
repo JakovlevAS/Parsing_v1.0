@@ -8,6 +8,8 @@ import datetime
 
 def main_menu():
     # Add a dropdown item and a command
+
+
     cm = Menu(m)
     m.add_cascade(label='Что парсим?', menu=cm)
     cm.add_command(label='Фото', command=active_label)
@@ -181,6 +183,7 @@ if __name__ == '__main__':
     m = Menu(root)
     root.config(menu=m)
     main_menu()
+    root.configure(bg='red')
 
     root.mainloop()
 
