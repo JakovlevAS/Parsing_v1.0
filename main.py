@@ -9,6 +9,7 @@ import datetime
 def active_label(parent):
     # Create a container frame
     frame = Frame(parent)
+    frame = Frame(parent, bg='green')
 
     lbl1 = Label(frame, text='Отправьте ссылку на картинку') #Creates a Label widget with the caption
     lbl2 = Label(frame, text='Время работы программы: ')
@@ -91,6 +92,6 @@ def parsing(url_entry_text): # Defines the function parsing() to extract informa
 if __name__ == '__main__':
     root = Tk()
     root.title("Приложение для парсинга")
-    root.geometry("400x400")
+    root.geometry("500x400")
     bt1 = active_label(root)
     root.mainloop()
