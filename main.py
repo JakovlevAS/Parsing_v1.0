@@ -6,10 +6,12 @@ from tkinter import ttk
 import os
 import datetime
 
-def active_label(parent):
+
+
+def active_label():
     # Create a container frame
-    frame = Frame(parent)
-    frame = Frame(parent, bg='green')
+    frame = Frame(root)
+    frame = Frame(root, bg='green')
 
     lbl1 = Label(frame, text='Отправьте ссылку на картинку') #Creates a Label widget with the caption
     lbl2 = Label(frame, text='Время работы программы: ')
@@ -31,8 +33,8 @@ def active_label(parent):
     btn1.grid(column=0, row=3, padx=10, pady=10)
 
     frame.grid(row=0, column=0, sticky="nsew") #Places the frame widget in a grid layout in row 0 and column 0 and sets the widget to stretch in all directions.
-    parent.grid_rowconfigure(0, weight=1)
-    parent.grid_columnconfigure(0, weight=1)
+    frame.grid_rowconfigure(0, weight=1)
+    frame.grid_columnconfigure(0, weight=1)
     frame.grid_rowconfigure(1, weight=1)
     frame.grid_columnconfigure(0, weight=1)
 
@@ -93,5 +95,14 @@ if __name__ == '__main__':
     root = Tk()
     root.title("Приложение для парсинга")
     root.geometry("500x400")
-    bt1 = active_label(root)
+    # Create the menu
+    m = Menu(root)
+    root.config(menu=m)
+
+    # Add a dropdown item and a command
+    cm = Menu(m)
+    m.add_cascade(label='Что парсим?', menu=cm)
+    cm.add_command(label='Фото', command=active_label)
+
     root.mainloop()
+
