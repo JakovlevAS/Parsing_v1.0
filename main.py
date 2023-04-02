@@ -100,8 +100,8 @@ def active_label2():
     frame = Frame(root, bg='blue')
 
 
-    lbl1 = Label(frame, text='Отправьте ссылку на видео') #Creates a Label widget with the caption
-    lbl2 = Label(frame, text='Время работы программы: ')
+    lbl1 = Label(frame, text='Отправьте ссылку на видео',font='Times 15') #Creates a Label widget with the caption
+    lbl2 = Label(frame, text='Время работы программы: ', font='Times 14')
     lbl1.grid(column=0, row=0, padx=10, pady=10)
     lbl2.grid(column=1, row=1, padx=10, pady=10)
     url_entry1 = ttk.Entry(frame) #Creates an Entry widget for inputting a URL.
@@ -116,7 +116,7 @@ def active_label2():
         parsing1(url_entry_video)
         clear(url_entry1)
 
-    btn1 = Button(frame, text='Отправить', command=on_submit1)
+    btn1 = Button(frame, text='Отправить', command=on_submit1,font='Times 15')
     btn1.grid(column=0, row=3, padx=10, pady=10)
 
     frame.grid(row=0, column=0, sticky="nsew") #Places the frame widget in a grid layout in row 0 and column 0 and sets the widget to stretch in all directions.
