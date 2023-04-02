@@ -39,6 +39,7 @@ def active_label():
     btn1 = Button(frame, text='Отправить', command=on_submit, font=' Times 15')
     btn1.grid(column=0, row=3, padx=10, pady=10)
 
+
     frame.grid(row=0, column=0, sticky="nsew") #Places the frame widget in a grid layout in row 0 and column 0 and sets the widget to stretch in all directions.
     frame.grid_rowconfigure(0, weight=1)
     frame.grid_columnconfigure(0, weight=1)
@@ -75,7 +76,7 @@ def parsing(url_entry_text): # Defines the function parsing() to extract informa
         return
 
     soup = BeautifulSoup(response.content, 'html.parser')
-    folder_path = 'X:\\Картинки'
+    folder_path = r'X:\Картинки'
 
     #The function then checks if a directory exists at the specified path, and creates it if it does not exist.
     try:
@@ -94,6 +95,9 @@ def parsing(url_entry_text): # Defines the function parsing() to extract informa
                     f.write(requests.get(image_url).content)
             except IOError as e:
                 print("Error writing image file:", e)
+    os.startfile(folder_path)
+
+
 
 def active_label2():
     # Create a container frame
@@ -168,6 +172,7 @@ def parsing1(url_entry_video): # Defines the function parsing() to extract infor
         except IOError as e:
             print("Error writing video content to file:", e)
             return
+    os.startfile(folder_path1)
 
 
 
