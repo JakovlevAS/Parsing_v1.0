@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter import ttk
 import os
 import datetime
+from PIL import ImageTk, Image
 
 def main_menu():
 
@@ -187,7 +188,18 @@ if __name__ == '__main__':
     m = Menu(root)
     root.config(menu=m)
     main_menu()
-    root.configure(bg='red')
+    # Load the image using PIL
+    img = Image.open(r"C:\Users\Alex\Downloads\KOL_RABI.jpg")
+    
+    # Resize the image using PIL
+    img = img.resize((550, 400), Image.ANTIALIAS)
+
+    # Convert the PIL image object to a Tkinter PhotoImage object
+    tkimg = ImageTk.PhotoImage(img)
+
+    # Create a label widget and display the image
+    label = Label(root, image=tkimg)
+    label.grid()
 
     root.mainloop()
 
